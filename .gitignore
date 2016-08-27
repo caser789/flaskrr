@@ -1,2 +1,13 @@
 *.db
 *.egg/
+.cache/
+bin/
+build/
+dist/
+*egg*
+include/
+lib/
+local/
+*.pyc
+*.cfg
+*.swp
