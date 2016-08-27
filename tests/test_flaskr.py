@@ -54,6 +54,18 @@ def test_login_logout(client):
     assert b'Invalid password' in rv.data
 
 
+def test_messages(client):
+    """test that message work"""
+    login(client, flaskr.app.config['USERNAME'],
+          flaskr.app.config['PASSWORD'])
+    rv = client.post('/add', data=dict(
+        title='<Hello>',
+        text='<strong>HTML</strong> allowed here'
+        ), follow_redirects=True)
+    assert b'No entries here so far' not in rv.data
+    assert b'&lt;Hello&gt;' in rv.data
+    assert b'<strong>HTML</strong> allowed here' in rv.data
+
 
 
     
