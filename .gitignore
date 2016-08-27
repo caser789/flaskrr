@@ -11,3 +11,5 @@ local/
 *.pyc
 *.cfg
 *.swp
+*.tar.gz
+
